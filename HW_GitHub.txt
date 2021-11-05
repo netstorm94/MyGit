@@ -46,10 +46,15 @@ GIT Homework 1 (Изнанкин Евгений Александрович)
  - 		 vim new2.json 			(содержимое см. фаил на гите)
 
  14. Добавить и закоммитить “new2.txt” одной строчкой. 
- -		 git add . && git commit -m "add inform"
+ -		 git add new2.txt && git commit -m "add inform"
 
  15. Добавить и закоммитить “new2.json” одной строчкой.
- -		 git add . && git commit -m "add inform"
+ -		 git add new2.json && git commit -m "add inform"
+ 
+ 14-15.
+ Можно так же оба пункта выполнить командой:
+ 
+ git commit -a -m "add inform"
 
 
  16. Отправить изменения на внешний репозиторий.
