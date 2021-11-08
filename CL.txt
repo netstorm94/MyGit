@@ -1,0 +1,7 @@
+ID|		Priority		|		Task		|		Test data		|		Result		|		Comment |
+1.
+2.
+3.
+4.
+5.
+6.
