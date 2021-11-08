@@ -1,0 +1,25 @@
+ID
+
+Title
+" 				"
+
+Input data
+Login:
+Password:
+
+Steps
+1.
+2.
+3.
+
+
+Expected Result:
+"				"
+
+Actual result:
+"				"
+
+Environment:
+OS, Browser
+
+Attachments:
