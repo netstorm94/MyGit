@@ -87,3 +87,4 @@ ID|		Priority		|		Task		|		Test data		|		Result		|		Comment |
 10. Синхронизировать Внешнюю и Локальную ветки Main
 		- git checkout master
 		- git pull
+..
