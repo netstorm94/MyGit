@@ -1,4 +1,4 @@
-1. На локальном репозитории сделать ветки для:
+1. РќР° Р»РѕРєР°Р»СЊРЅРѕРј СЂРµРїРѕР·РёС‚РѕСЂРёРё СЃРґРµР»Р°С‚СЊ РІРµС‚РєРё РґР»СЏ:
 - Postman
 - Jmeter
 - CheckLists
@@ -9,12 +9,12 @@
 
 *		- git branch (name)
 
-2. Запушить все ветки на внешний репозиторий 
+2. Р—Р°РїСѓС€РёС‚СЊ РІСЃРµ РІРµС‚РєРё РЅР° РІРЅРµС€РЅРёР№ СЂРµРїРѕР·РёС‚РѕСЂРёР№ 
 		- git push --all
-или по одной
+РёР»Рё РїРѕ РѕРґРЅРѕР№
 		- git push -u origin (name branch)
 
-3. В ветке Bag Reports сделать текстовый документ со структурой баг репорта
+3. Р’ РІРµС‚РєРµ Bag Reports СЃРґРµР»Р°С‚СЊ С‚РµРєСЃС‚РѕРІС‹Р№ РґРѕРєСѓРјРµРЅС‚ СЃРѕ СЃС‚СЂСѓРєС‚СѓСЂРѕР№ Р±Р°Рі СЂРµРїРѕСЂС‚Р°
 
 		- git chekout Bag_Reports
 		- touch BR.txt
@@ -49,20 +49,20 @@ Attachments:
 :wq
 
 
-4. Запушить структуру багрепорта на внешний репозиторий
+4. Р—Р°РїСѓС€РёС‚СЊ СЃС‚СЂСѓРєС‚СѓСЂСѓ Р±Р°РіСЂРµРїРѕСЂС‚Р° РЅР° РІРЅРµС€РЅРёР№ СЂРµРїРѕР·РёС‚РѕСЂРёР№
 		- git add . && git commit -m "add file structure bag report"
 		- git push --set-upstream origin Bag_Reports
 		
 		
-5. Вмержить ветку Bag Reports в Main
+5. Р’РјРµСЂР¶РёС‚СЊ РІРµС‚РєСѓ Bag Reports РІ Main
 		- git checkout master
 		- git merge Bag_Reports
 		
-6. Запушить main на внешний репозиторий.
+6. Р—Р°РїСѓС€РёС‚СЊ main РЅР° РІРЅРµС€РЅРёР№ СЂРµРїРѕР·РёС‚РѕСЂРёР№.
 		- git push
 		
 	
-7. В ветке CheckLists набросать структуру чек листа.
+7. Р’ РІРµС‚РєРµ CheckLists РЅР°Р±СЂРѕСЃР°С‚СЊ СЃС‚СЂСѓРєС‚СѓСЂСѓ С‡РµРє Р»РёСЃС‚Р°.
 		- git checkout CheckLists
 		- touch CL.txt
 		- vim CL.txt
@@ -76,15 +76,15 @@ ID|		Priority		|		Task		|		Test data		|		Result		|		Comment |
 6.
 
 
-8. Запушить структуру на внешний репозиторий
+8. Р—Р°РїСѓС€РёС‚СЊ СЃС‚СЂСѓРєС‚СѓСЂСѓ РЅР° РІРЅРµС€РЅРёР№ СЂРµРїРѕР·РёС‚РѕСЂРёР№
 		- git add . && git commit -m "add file structure CheckLists"
 		- git push --set-upstream origin CheckLists
 
-9. На внешнем репозитории сделать Pull Request ветки CheckLists в main
-		- на сайте в ветке master нажать кнопку Compare $ pull request , заполнить commit далее Merge pull Request
+9. РќР° РІРЅРµС€РЅРµРј СЂРµРїРѕР·РёС‚РѕСЂРёРё СЃРґРµР»Р°С‚СЊ Pull Request РІРµС‚РєРё CheckLists РІ main
+		- РЅР° СЃР°Р№С‚Рµ РІ РІРµС‚РєРµ master РЅР°Р¶Р°С‚СЊ РєРЅРѕРїРєСѓ Compare $ pull request , Р·Р°РїРѕР»РЅРёС‚СЊ commit РґР°Р»РµРµ Merge pull Request
 
 
-10. Синхронизировать Внешнюю и Локальную ветки Main
+10. РЎРёРЅС…СЂРѕРЅРёР·РёСЂРѕРІР°С‚СЊ Р’РЅРµС€РЅСЋСЋ Рё Р›РѕРєР°Р»СЊРЅСѓСЋ РІРµС‚РєРё Main
 		- git checkout master
 		- git pull
 ..
