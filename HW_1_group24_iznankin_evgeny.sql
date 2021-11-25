@@ -57,7 +57,7 @@ where created_on = '2021-07-12 00:00:00' and name like '%8%';
 
 -- 17. Вывести пользователя у которых id равен 10
 select * from students
-where id = '8';
+where id = 10;
 
 
 -- 18. Вывести пользователя у которых id равен 53
