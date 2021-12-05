@@ -20,13 +20,13 @@ select employees_name,monthly_salary from salary
 -- 4. Вывести все зарплатные позиции  меньше 2000 но работник по ним не назначен. (ЗП есть, но не понятно кто её получает.)
 select employees_name,monthly_salary from salary
 	join employee_salary on salary.id=employee_salary.salary_id
-	left outer join employees on employee_salary.employee_id=employees.id
+	left join employees on employee_salary.employee_id=employees.id
 	where employees_name is null and monthly_salary<2000;
 
 -- 5. Найти всех работников кому не начислена ЗП.
 select employees_name,monthly_salary from salary
-	full outer join employee_salary on salary.id=employee_salary.salary_id
-	full outer join employees on employee_salary.employee_id=employees.id
+	join employee_salary on salary.id=employee_salary.salary_id
+	right join employees on employee_salary.employee_id=employees.id
 	where monthly_salary is null;
 
 -- 6. Вывести всех работников с названиями их должности.
@@ -70,16 +70,16 @@ select employees_name,role_name from employees
 select employees_name,role_name,monthly_salary from employees
 	join roles_employee on employees.id=roles_employee.employee_id
 	join roles on roles_employee.role_id=roles.id
-	join employee_salary on roles_employee.employee_id=employee_salary.employee_id
-	join salary on employee_salary.salary_id=salary.id
+	left join employee_salary on roles_employee.employee_id=employee_salary.employee_id
+	left join salary on employee_salary.salary_id=salary.id
 	where role_name like '%Junior%';
 
 -- 13. Вывести имена и зарплаты Middle специалистов
 select employees_name,monthly_salary from employees
 	join roles_employee on employees.id=roles_employee.employee_id
 	join roles on roles_employee.role_id=roles.id
-	join employee_salary on roles_employee.employee_id=employee_salary.employee_id
-	join salary on employee_salary.salary_id=salary.id
+	left join employee_salary on roles_employee.employee_id=employee_salary.employee_id
+	left join salary on employee_salary.salary_id=salary.id
 	where role_name like '%Middle%';
 
 
@@ -87,24 +87,24 @@ select employees_name,monthly_salary from employees
 select employees_name,monthly_salary from employees
 	join roles_employee on employees.id=roles_employee.employee_id
 	join roles on roles_employee.role_id=roles.id
-	join employee_salary on roles_employee.employee_id=employee_salary.employee_id
-	join salary on employee_salary.salary_id=salary.id
+	left join employee_salary on roles_employee.employee_id=employee_salary.employee_id
+	left join salary on employee_salary.salary_id=salary.id
 	where role_name like '%Senior%';
 
 -- 15. Вывести зарплаты Java разработчиков
 select monthly_salary from employees
 	join roles_employee on employees.id=roles_employee.employee_id
 	join roles on roles_employee.role_id=roles.id
-	join employee_salary on roles_employee.employee_id=employee_salary.employee_id
-	join salary on employee_salary.salary_id=salary.id
+	left join employee_salary on roles_employee.employee_id=employee_salary.employee_id
+	left join salary on employee_salary.salary_id=salary.id
 	where role_name like '%Java developer%';
 
 -- 16. Вывести зарплаты Python разработчиков
 select monthly_salary from employees
 	join roles_employee on employees.id=roles_employee.employee_id
 	join roles on roles_employee.role_id=roles.id
-	join employee_salary on roles_employee.employee_id=employee_salary.employee_id
-	join salary on employee_salary.salary_id=salary.id
+	left join employee_salary on roles_employee.employee_id=employee_salary.employee_id
+	left join salary on employee_salary.salary_id=salary.id
 	where role_name like '%Python%';
 
 -- 17. Вывести имена и зарплаты Junior Python разработчиков
@@ -129,14 +129,14 @@ select employees_name,monthly_salary,role_name from employees
 	join roles on roles_employee.role_id=roles.id
 	join employee_salary on roles_employee.employee_id=employee_salary.employee_id
 	join salary on employee_salary.salary_id=salary.id
-	where role_name like '%Middle JavaScript%';
+	where role_name like '%Senior JavaScript%';
 
 -- 20. Вывести зарплаты Junior QA инженеров
 select employees_name,monthly_salary,role_name from employees
 	join roles_employee on employees.id=roles_employee.employee_id
 	join roles on roles_employee.role_id=roles.id
-	join employee_salary on roles_employee.employee_id=employee_salary.employee_id
-	join salary on employee_salary.salary_id=salary.id
+	left join employee_salary on roles_employee.employee_id=employee_salary.employee_id
+	left join salary on employee_salary.salary_id=salary.id
 	where role_name like '%Junior Manual QA%' or role_name like '%Junior Automation QA%'
 
 -- 21. Вывести среднюю зарплату всех Junior специалистов
@@ -175,24 +175,24 @@ select max(monthly_salary) as MAX_salary from employees
 select count(role_name) as summ_QA from employees
 	join roles_employee on employees.id=roles_employee.employee_id
 	join roles on roles_employee.role_id=roles.id
-	join employee_salary on roles_employee.employee_id=employee_salary.employee_id
-	join salary on employee_salary.salary_id=salary.id
+	left join employee_salary on roles_employee.employee_id=employee_salary.employee_id
+	left join salary on employee_salary.salary_id=salary.id
 	where role_name like '%QA%';
 
 -- 26. Вывести количество Middle специалистов.
 select count(role_name) as summ_Middle from employees
 	join roles_employee on employees.id=roles_employee.employee_id
 	join roles on roles_employee.role_id=roles.id
-	join employee_salary on roles_employee.employee_id=employee_salary.employee_id
-	join salary on employee_salary.salary_id=salary.id
+	left join employee_salary on roles_employee.employee_id=employee_salary.employee_id
+	left join salary on employee_salary.salary_id=salary.id
 	where role_name like '%Middle%';
 
 -- 27. Вывести количество разработчиков
 select count(role_name) as summ_developer from employees
 	join roles_employee on employees.id=roles_employee.employee_id
 	join roles on roles_employee.role_id=roles.id
-	join employee_salary on roles_employee.employee_id=employee_salary.employee_id
-	join salary on employee_salary.salary_id=salary.id
+	left join employee_salary on roles_employee.employee_id=employee_salary.employee_id
+	left join salary on employee_salary.salary_id=salary.id
 	where role_name like '%developer%';
 
 -- 28. Вывести фонд (сумму) зарплаты разработчиков.
@@ -208,8 +208,8 @@ select sum(monthly_salary) as MAX_salary from employees
 select employees_name,role_name,monthly_salary from employees
 	join roles_employee on employees.id=roles_employee.employee_id
 	join roles on roles_employee.role_id=roles.id
-	join employee_salary on roles_employee.employee_id=employee_salary.employee_id
-	join salary on employee_salary.salary_id=salary.id
+	left join employee_salary on roles_employee.employee_id=employee_salary.employee_id
+	left join salary on employee_salary.salary_id=salary.id
 	order by monthly_salary;
 
 -- 30. Вывести имена, должности и ЗП всех специалистов по возрастанию у специалистов у которых ЗП от 1700 до 2300
