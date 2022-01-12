@@ -129,7 +129,7 @@ select employees_name,monthly_salary,role_name from employees
 	join roles on roles_employee.role_id=roles.id
 	join employee_salary on roles_employee.employee_id=employee_salary.employee_id
 	join salary on employee_salary.salary_id=salary.id
-	where role_name like '%Senior JavaScript%';
+	where role_name like '%Senior Java developer%';
 
 -- 20. Вывести зарплаты Junior QA инженеров
 select employees_name,monthly_salary,role_name from employees
